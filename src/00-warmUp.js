@@ -26,7 +26,9 @@ let numberArr = [3, 5, 8, 4, 9];
  * > [4, 6, 9, 5, 10]
  *
  */
-function plusOne() {}
+function plusOne(array) {
+  
+}
 
 /**
  *

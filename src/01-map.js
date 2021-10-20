@@ -19,8 +19,14 @@ const ghostPokemonData = require("../data/ghostPokemon_data");
  * ^^^ This is not the complete list of names, but you get the idea ^^^
  *
  */
-function getPokemonNames(pokemonArr) {}
-
+function getPokemonNames(pokemonArr) {
+  if(pokemonArr.length === 0){
+    throw `Error`;
+  }
+  let ans = pokemonArr.map(poke => poke.name);
+  return ans;
+}
+console.log("~~GET POKEMON NAME~~", getPokemonNames(ghostPokemonData))
 /**
  *
  * 
@@ -72,8 +78,14 @@ function getPokemonNames(pokemonArr) {}
   ....                        //For the sake of space, I won't include the rest of them.
  * ]
  */
-function addCaughtProperty(pokemonArr) {}
-
+function addCaughtProperty(pokemonArr) {
+  
+  return pokemonArr.map(pokemonObj => {
+    pokemonObj.caught = false;
+    return pokemonObj
+  })
+}
+console.log("~~~~ADD CAUGHT PROPERTY~~~",addCaughtProperty(examplePokemonData));
 /**
  *
  *
@@ -124,8 +136,13 @@ function addCaughtProperty(pokemonArr) {}
   ....                      //For the sake of space, I won't include the rest of them.
  * ]
  */
-function addAnyProperty() {}
-
+function addAnyProperty(givenArray, key, valueOfKey) {
+  return givenArray.map((pokemonObj)=>{
+    pokemonObj[key] = valueOfKey;
+    return pokemonObj
+  })
+}
+console.log("~~~~~ADD ANY PROPERTY~~~~~~",addAnyProperty(examplePokemonData, "ageInYears", 2))
 module.exports = {
   getPokemonNames,
   addCaughtProperty,
